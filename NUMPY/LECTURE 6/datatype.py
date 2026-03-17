@@ -27,3 +27,12 @@
 # arr=np.array([1,2.5,3])
 # print(arr.dtype)
 
+#USE .type_of_data(name of array) TO CHANGE THE TYPE
+# ar1=np.array([1,2,3])
+# print(ar1)
+# print(ar1.dtype)
+
+# ar1=np.float64(ar1)  #Changing data type
+# print(ar1)
+# print(ar1.dtype)
+

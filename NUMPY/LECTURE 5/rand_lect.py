@@ -17,3 +17,6 @@
 # print(ar3)
 # print(ar3.ndim)
 
+
+#ARGUMENT ME SHAPE DIRECT JAYEGA (2,3,5)
+

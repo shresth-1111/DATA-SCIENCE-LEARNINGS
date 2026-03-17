@@ -1,4 +1,4 @@
-import numpy as np
+# import numpy as np
 
 #USING randn()
 
@@ -16,3 +16,5 @@ import numpy as np
 # ar3=np.random.ranf((2,3,5))
 # print(ar3)
 # print(ar3.ndim)
+
+#ARGUMENT ME ((4,3,5)) SHAPE AS A TUPLE JAYEGA
