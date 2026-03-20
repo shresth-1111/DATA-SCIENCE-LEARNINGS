@@ -135,7 +135,7 @@ import pandas as pd
 # conn=mysql.connector.connect(
 #     host="localhost",
 #     user="root",
-#     password="***",
+#     password="****",
 #     database="world"
 # )
 
