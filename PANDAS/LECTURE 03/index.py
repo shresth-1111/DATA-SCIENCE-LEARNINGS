@@ -1,12 +1,12 @@
 import pandas as pd
 
-person={
-    "first_name":["tanushree","ashwini","shrishti","somya"],
-    "second_name":["sinha","menon","sharma","shree"],
-    "email":["tanushree@gmail.com","ashwini@gmail.com","shrishti@gmail.com","somya@gmail.com"]
-}
+# person={
+#     "first_name":["tanushree","ashwini","shrishti","somya"],
+#     "second_name":["sinha","menon","sharma","shree"],
+#     "email":["tanushree@gmail.com","ashwini@gmail.com","shrishti@gmail.com","somya@gmail.com"]
+# }
 
-df=pd.DataFrame(person)
+# df=pd.DataFrame(person)
 # print(df.index)  #This is the bydefault indexing 0,1,2---
 
 # df.set_index("email")         #We chganged the index to email 
@@ -23,5 +23,9 @@ df=pd.DataFrame(person)
 #ANOTHER WAY OF DECIDING THE INDEX
 # df=pd.read_csv(-----,index_col="whatever column u want as index")
 
-#SORTING ON THE BASIS OF INDEXING
-# print(df.sort_index(ascending=False))
+#SORTING ON THE BASIS OF INDEXING 
+# ascending=False:With this descending order
+# Without this ascending order
+# print(df.sort_index(ascending=False))   #Do inplace=True to make those sorting permanent 
+
+

@@ -1,31 +1,34 @@
 import pandas as pd
-
-#SMALL PRACTICE
+import numpy as np
 
 # person={
-#     "first":['tanushree','shristi','ashwini','somya','shresth'],
-#     "last":['sinha','sharma','menon','shree','sinha'],
-#     "email":['tanushree.sinha@Gmail.com','shristi.sharma@gmail.com','ashwini.menon@gmail.com','somya.shree@gmail.com','shresthsinha@gmail.com']
+#     "first_name":["tanushree","ashwini","shrishti","somya"],
+#     "second_name":["sinha","menon","sharma","shree"],
+#     "email":["tanushree@gmail.com","ashwini@gmail.com","shrishti@gmail.com","somya@gmail.com"]
 # }
 
 # df=pd.DataFrame(person)
 
-# print(df)
-# df.set_index('email',inplace=True)
-# print(df.index)
-# df.reset_index(inplace=True)
-# print(df.index)
-# filt=(df['last']=='sinha')
-# print(df.loc[filt,'first'])
+# print(df["second_name"]=="sinha")                   #This is the filter it will give series of true and false values as per the condition
 
-#APPLYING IT ON LARGE DATA FRAME 
-# pd.set_option('display.max_column',None)
+# print(df[df["second_name"]=="sinha"])               #This is to show the full details wherevr the filter has the value as true
 
-df=pd.read_csv('../survey_results_public.csv')
-schema_df=pd.read_csv("../survey_results_schema.csv")
+# filt=df["second_name"]=="sinha"
+# print(~filt)                                          #This is the filter it will give series of true and false values as per the condition
+# print(df[~filt])                                      #This is to show the full details wherevr the filter has the value as tfalse (~ symbol is used)
 
-# for i in df.columns:
-#     print(i)
+#In pandas if in any column the value is NaN, the conditional operator will give any result on Nan as False without showing any error 
 
-filt=((df['CompTotal']>90000))
-print(df.loc[filt,["WebframeHaveWorkedWith",'CompTotal']])
+#Use of .str.contains()
+#df["name"].str.contains(string) to check(gives true/false) this particular string lies in evry name or not 
+
+#Use of isin 
+#To check these values lies in the column or not (gives true/false)
+#Can also use "or" for the same thing but this is more smarter way
+# names=["somya","tanushree"]  
+# print(df["first_name"].isin(names))  
+
+
+
+
+

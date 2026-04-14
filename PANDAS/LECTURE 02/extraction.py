@@ -11,8 +11,8 @@ import pandas as pd
 
 #EXTRACTION FROM DATA SETS
 
-# print(df.email)         #To print a series or extra t a series
-# print(df[["email","first_name"]])       #To extract multiple columns
+# print(df.email)                           #To print a series or extra t a series
+# print(df[["email","first_name"]])         #To extract multiple columns
 
 # print(df.columns)       #To get detailed list of all columns
 
@@ -24,7 +24,7 @@ import pandas as pd
 
 # print(df.iloc[[0,1,2],[0,2]])           #To see the speific column detail of that row 
 # You can choose multiple rows and multiple columns
-# You can use [0,1,2] or can directly write 0:3 (without bradckets) df.iloc[0:3,[0,1]]
+# You can use [0,1,2] or can directly write 0:3 (without brackets) df.iloc[0:3,[0,1]]
 
 #Similarly we can use df.loc , here instead of column index we can use actual name if known
 
