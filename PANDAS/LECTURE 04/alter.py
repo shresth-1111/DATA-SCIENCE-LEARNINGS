@@ -47,7 +47,25 @@ df=pd.DataFrame(person)
 # print(df.iloc[[2]])
 
 #Method 2 : Changing specific info of a row
-#   
+# df.loc[index of row you want to select, [columns deatils you want to change of that row]]=[new values]
+#Insted of writing index of row you want u can also give a filter there that will take out that row but use .loc[] only 
+
+# print(df.iloc[2,[1,2]])
+
+# df.loc[2,["second_name","email"]]=["shree","shristi25@gmail.com"]
+
+# print(df.iloc[2,[1,2]])
+
+#Method 3 : Changing various rows at once
+
+#The email of all rows will convert into upper
+# df["email"]=df["email"].str.upper()
+# print(df["email"])
+
+# #You can also use 
+# df["email"]=[x.upper() for x in df["email"]]
+# print(df["email"])
+
 
 
 
