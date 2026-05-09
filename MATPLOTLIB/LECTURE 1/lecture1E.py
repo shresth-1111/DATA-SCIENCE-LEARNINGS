@@ -1,15 +1,29 @@
+#Importing  libraries
+
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+import seaborn as sns
 
-#Making a PieChart
-# data=[23,45,100,20,49]
-# subj=["science","sst","maths","it","english"]
-# explosion=[0.1,0,0,0.1,0]
-# plt.pie(data,labels=subj,autopct='%0.2f%%',explode=explosion)
+#PART 5
 
-#USING PROPER DATA SET
-df=pd.read_csv('gayle-175.csv')
+#Creating Pie Charts
+#Purpose - Used for univariate or bivariate analysis [numerical / numerical vs categorical]
 
-plt.pie(df["batsman_runs"],labels=df["batsman"],colors=["green","brown","grey","black","darkblue","skyblue"],autopct='%0.1f%%')
+data=[23,45,100,20,49]
+
+plt.figure()
+plt.pie(data)
+
+plt.figure()
+plt.pie(data,autopct="%0.1f%%")  #Used to show percentage on chart
+
+plt.figure()
+subjects=["Maths","Physics","CS","Chemistry","English"]
+plt.pie(data,labels=subjects,autopct="%0.1f%%")     #Used to show labels to the pie (be careful of the order should be same in both lists data and subjects)
+#Similarly you can pass list of colors to change colors, in same order
+
+plt.figure()
+plt.pie(data,explode=[0.1,0,0,0,0.1]) #To make the feel deattached/separate from others 
+
 plt.show()

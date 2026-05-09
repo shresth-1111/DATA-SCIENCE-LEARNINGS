@@ -1,36 +1,56 @@
+#Importing librarires
+
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-#Making a Bar Chart
-# children=[10,20,30,40,50]
-# color=["red","blue","orange","purple","green"]
-#plt.bar(color,children)
+#PART 3
+
+#Creating a Bar Chart
+#Purpose - Used for bivariate analysis numerical vs categorical 
+
+children=[15,20,32,25,16,32]
+color=["blue","orange","chocolate","purple","black","white"]
+
+# plt.figure()
+# plt.bar(color,children)
+
+# plt.figure()
 # plt.barh(color,children)
 
+#Working on real data set
 
-#Plotting a multiple bar chart
-df=pd.read_csv("batsman_season_record.csv")
+dataset=pd.read_csv("batsman_season_record.csv")
 
-#Single Record
-# plt.bar(df["batsman"],df["2016"])
-
-
-#Multiple Record
-# plt.bar(np.arange(df.shape[0])-0.2,df["2015"],width=0.2)
-# plt.bar(np.arange(df.shape[0]),df["2016"],width=0.2)
-# plt.bar(np.arange(df.shape[0])+0.2,df["2017"],width=0.2)
-
-# plt.xticks(np.arange(df.shape[0]),df["batsman"])
-
-# plt.xticks(rotation='vertical')   To rotate the names on the x axis in case the lenght of the name is very large
+# plt.figure()
+# plt.bar(dataset["batsman"],dataset["2015"])
 
 
-#Stacked Bar Chart
-plt.bar(df["batsman"],df["2017"],label='2017')
-plt.bar(df["batsman"],df["2016"],bottom=(df["2017"]),label="2016")
-plt.bar(df["batsman"],df["2015"],bottom=(df["2016"]+df["2017"]),label="2015")
+#Grouped Bar Charts
+
+x=np.arange(dataset.shape[0])   #To create number of position
+
+plt.figure()
+#Allocation position
+plt.bar(x-0.2,dataset["2015"], width=0.2,label="2015")   
+plt.bar(x,dataset["2016"], width=0.2,label="2016")
+plt.bar(x+0.2,dataset["2017"], width=0.2,label="2017")
+
+plt.xticks(x, dataset["batsman"])   #Replacing actual position with the batsman name
+#On the above xticks we can add attribute rotation-"vertical" to show names vertically  
+
+# plt.legend()
+# plt.show()
+
+#Desigining becomes little complex and difficult in grouped bar charts 
+
+#Stacked Bar Charts 
+
+plt.figure()
+plt.bar(dataset["batsman"],dataset["2015"],label="2015")     #Sabse niche
+plt.bar(dataset["batsman"],dataset["2016"],bottom=(dataset["2015"]),label="2016")   #Uske upar, 2015 iske niche rahega 
+plt.bar(dataset["batsman"],dataset["2017"],bottom=(dataset["2015"]+dataset["2016"]),label="2017")  #Sabse upar, 2015,2016 iske niche rahega 
 
 plt.legend()
 plt.show()

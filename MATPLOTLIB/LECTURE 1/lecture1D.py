@@ -1,22 +1,26 @@
+#importing libraries
+
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+import seaborn as sns
 
-#Making a Histogram
+#PART 4
 
-# classMark=[10,20,30,40,50,60,70,80,90,100]
-# data=np.arange(0,20,2)
-# print(data)
-# plt.hist(data,bins=[0,5,10,15,20],rwidth=1)
+#Creating Histogram
+#Purpose - Used for univariate analysis generally for numerical data specially for frquency count 
 
+plt.figure()
+data=[32,45,56,10,15,27,61]
+plt.hist(data)    #Bins will be decide internally on their own
 
-#USING PROPER DATA SET
-# df=pd.read_csv('vk.csv')
-# print(df)
-# plt.hist(df["batsman_runs"],bins=np.arange(0,130,10),rwidth=0.5)
+plt.figure()
+plt.hist(data,bins=[10,20,30,40,50,60,70])  #Deciding bin size manually
+#Bins created will be 
+#10-20 (10 included, 20 excluded)
+#20-30 (20 included, 30 excluded) ...continue
 
-#USING A BIG DATA SET
-# direc=np.load('big-array.npy')
-# plt.hist(direc,bins=[10,20,30,40,50,60,70],log=True,rwidth=0.5)
+#Use rwidth to change the width of bars (rwidth have nothing to do with bin size)
+#If frequency of few data points is too high compare to other you can use log=true as an attribute
+
 plt.show()
-
